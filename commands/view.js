@@ -17,9 +17,11 @@ module.exports = {
 
     if (screenshot.jobs) return message.channel.send("Doing screenshot please wait until it will end!");
 
-    if (args.length === 3 || args.length === 1) {
+    if (args.length < 4) {
       let radius = Math.abs(args[0]);
-      if (this.radiusToArea(radius) > this.options.maxArea) return message.channel.send("Too big area! max: " + this.options.maxArea);
+      let area = this.radiusToArea(radius);
+
+      if (area > this.options.maxArea) return message.channel.send("Too big area! max: " + this.options.maxArea);
       let x = args[1];
       let y = args[2];
 
@@ -46,7 +48,6 @@ module.exports = {
       let area = canvasHeight * canvasWidth;
 
       if (Math.abs(area) > this.options.maxArea) return message.channel.send("Too big area! max: " + maxArea);
-
 
       let response = await screenshot.takeScreenshot(x1, y1, x2, y2);
       if (response === false || response[0] === false) return message.channel.send("Something went wrong contact with mathias377");

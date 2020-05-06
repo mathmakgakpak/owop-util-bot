@@ -1,6 +1,6 @@
 {
   "name": "owop-util-bot",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "owop util bot for archiving canvas and other things",
   "main": "index.js",
   "dependencies": {

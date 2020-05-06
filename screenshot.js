@@ -108,11 +108,20 @@ class Screenshot {
 	    return false;
 	  }
 	}
-	async takeScreenshot(x1, y1, x2, y2) {
+	async takeScreenshot(x1=0, y1=0, x2=1, y2=1) {
 	  x1 = x1 < x2 ? x1 : x2;
 	  y1 = y1 < y2 ? y1 : y2;
 	  x2 = x1 > x2 ? x1 : x2;
 	  y2 = y1 > y2 ? y1 : y2;
+    x1 = Math.round(x1);
+    y1 = Math.round(y1);
+    x2 = Math.round(x2);
+    y2 = Math.round(y2);
+    let canvasWidth = x2 - x1;
+    let canvasHeight = y2 - y1;
+    let area = canvasHeight * canvasWidth;
+    if(area === 0) throw new Error("Can not do image with 0 pixels :drrr:");
+
 	  let start = Date.now();
 		this.jobs++;
 	  if (await this.requestArea(x1, y1, x2, y2) === false) {
