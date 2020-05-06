@@ -115,8 +115,8 @@ class Screenshot {
 	  y2 = y1 > y2 ? y1 : y2;
     x1 = Math.round(x1);
     y1 = Math.round(y1);
-    x2 = Math.round(x2);
-    y2 = Math.round(y2);
+    x2 = Math.round(x2) + 1;
+    y2 = Math.round(y2) + 1;
     let canvasWidth = x2 - x1;
     let canvasHeight = y2 - y1;
     let area = canvasHeight * canvasWidth;
