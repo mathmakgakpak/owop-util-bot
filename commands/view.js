@@ -13,7 +13,8 @@ module.exports = {
   async run(message, args) {
     if (args.length < 1) return message.channel.send("Not engough args");
     args = args.map(x => +x);
-    if (isNaN(args.find(x => isNaN(x)))) return message.channel.send("One of args is not number!");
+
+    if(args.filter(x=>isNaN(x)).length) return message.channel.send("One of args is not number!");
 
     if (screenshot.jobs) return message.channel.send("Doing screenshot please wait until it will end!");
 
