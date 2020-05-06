@@ -1,0 +1,26 @@
+{
+  "name": "owop-util-bot",
+  "version": "1.0.0",
+  "description": "owop util bot for archiving canvas and other things",
+  "main": "index.js",
+  "dependencies": {
+    "better-owop-js": "^1.0.2",
+    "canvas": "^2.6.1",
+    "custom-env": "^2.0.1",
+    "discord.js": "^12.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mathmakgakpak/better-owop.js.git"
+  },
+  "author": "mathias377",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mathmakgakpak/better-owop.js/issues"
+  },
+  "homepage": "https://github.com/mathmakgakpak/better-owop.js#readme"
+}
