@@ -4,7 +4,7 @@
   "description": "owop util bot for archiving canvas and other things",
   "main": "index.js",
   "dependencies": {
-    "better-owop-js": "^1.0.2",
+    "better-owop-js": "^1.1.4",
     "canvas": "^2.6.1",
     "custom-env": "^2.0.1",
     "discord.js": "^12.2.0"

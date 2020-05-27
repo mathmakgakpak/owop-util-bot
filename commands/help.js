@@ -7,15 +7,27 @@ module.exports = {
     if(commandName) {
       let command = getCommand(commandName);
       if(!command) return message.channel.send("Command not found");
+      const embed = new Discord.MessageEmbed()
+      .setColor(utils.rgbToHex(...utils.randomColor()))
+      .addField("Command name", command.name)
+      .addField("Description", command.description)
+      .addField("Aliases", command.aliases.length ? command.aliases.join(", ") : "none");
 
-      message.channel.send(`**${command.name}**\nDescription: ${command.description}\nAliases: ${command.aliases.length ? command.aliases.join(", ") : "none"}`);
+      message.channel.send(embed);
     } else {
-      let string = "Commands:\n";
+      let string = "";
       for(let i in commands) {
         let command = commands[i];
-        string += `${prefix}${command.name} - ${command.description}\n`;
+        string += `${command.name} - ${command.description}\n`;
       }
-      message.channel.send(string);
+
+      const embed = new Discord.MessageEmbed()
+      .setColor(utils.rgbToHex(...utils.randomColor()))
+      .addField("Prefix", prefix)
+      .addField("Commands", utils.format.code(string, ""))
+
+
+      message.channel.send(embed);
     }
   }
 }
